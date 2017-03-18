@@ -1,6 +1,6 @@
 public class Sorter{
 
-  public static void bubble(int[] array){
+  public static void bubble(Integer[] array){
     int tmp;
     for(int i=0; i<array.length; i++){
       // Compare every value with the next ones to find for lower values
@@ -15,7 +15,7 @@ public class Sorter{
     }
   }
 
-  public static void printArray(int[] array){
+  public static void printArray(Integer[] array){
     for(int i=0; i<array.length; i++){
       System.out.print("["+array[i]+"] ");
     }
