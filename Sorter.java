@@ -15,6 +15,35 @@ public class Sorter{
     }
   }
 
+  public static void quick(Integer[] array, int first, int last){
+    int i, j, tmp, pivot;
+    i = first;
+    j = last;
+    pivot = array[(first+last)/2];
+    System.out.println("Pivot: "+pivot);
+    do{
+      // Find an element to the left lower than the pivot value
+      while(array[i] < pivot) i++;
+      // Find an element to the right greater than the pivot value
+      while(array[j] > pivot) j--;
+
+      // Make the switch
+      if(i<=j){
+        tmp = array[j];
+        array[j] = array[i];
+        array[i] = tmp;
+        i++;
+        j--;
+      }
+
+    } while(i <= j);
+
+    if(first < j)
+      quick(array, first, j);
+    if(i < last)
+      quick(array, i, last);
+  }
+
   public static void printArray(Integer[] array){
     for(int i=0; i<array.length; i++){
       System.out.print("["+array[i]+"] ");

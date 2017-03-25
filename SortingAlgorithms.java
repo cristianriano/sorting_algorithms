@@ -8,7 +8,7 @@ public class SortingAlgorithms{
 
     Scanner sc = new Scanner(System.in);
     String line;
-    char option;    
+    char option;
     boolean flag = true;
 
     printMenu(array);
@@ -37,6 +37,16 @@ public class SortingAlgorithms{
           Sorter.printArray(array);
           break;
 
+        case '3':
+          Sorter.quick(array, 0, array.length - 1);
+          System.out.println("Sorted: ");
+          Sorter.printArray(array);
+          break;
+
+        default:
+          System.out.println("Invalid value");
+          break;
+
       }
 
       printMenu(array);
@@ -56,7 +66,7 @@ public class SortingAlgorithms{
     System.out.println("Pick and option:");
     System.out.println(" 1. Input new Array");
     System.out.println(" 2. Bubble sort");
-    System.out.println(" 3. Radix sort");
+    System.out.println(" 3. Quick sort");
     System.out.println();
     System.out.println("=========================================");
   }
