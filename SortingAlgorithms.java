@@ -10,11 +10,14 @@ public class SortingAlgorithms{
     String line;
     char option;
     boolean flag = true;
+    int n;
+    int[] vector;
 
     printMenu(array);
     while((line = sc.nextLine()) != null){
       option = line.charAt(0);
       switch(option){
+        // Input new array
         case '1':
           List<Integer> newArray = new ArrayList<Integer>();
           do {
@@ -31,16 +34,30 @@ public class SortingAlgorithms{
           array = newArray.toArray(array);
           break;
 
+        // Bubble Sort
         case '2':
           Sorter.bubble(array);
           System.out.println("Sorted: ");
           Sorter.printArray(array);
           break;
 
+        // Quick sort
         case '3':
           Sorter.quick(array, 0, array.length - 1);
           System.out.println("Sorted: ");
           Sorter.printArray(array);
+          break;
+
+        // Insertion sort
+        case '4':
+          System.out.println("Input array length: ");
+          n = sc.nextInt();
+          vector = new int[n];
+          for(int i=0; i<n; i++){
+            vector[i] = sc.nextInt();
+            Sorter.insertion(vector, i+1);
+            Sorter.printArray(vector);
+          }
           break;
 
         default:
@@ -48,7 +65,7 @@ public class SortingAlgorithms{
           break;
 
       }
-
+      sc.nextLine();
       printMenu(array);
     }
 
@@ -67,6 +84,7 @@ public class SortingAlgorithms{
     System.out.println(" 1. Input new Array");
     System.out.println(" 2. Bubble sort");
     System.out.println(" 3. Quick sort");
+    System.out.println(" 4. Insertion sort");
     System.out.println();
     System.out.println("=========================================");
   }

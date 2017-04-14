@@ -44,7 +44,30 @@ public class Sorter{
       quick(array, i, last);
   }
 
+  public static int[] insertion(int [] array, int n){
+    int j, tmp;
+    for(int i=0; i<n; i++){
+      tmp = array[i];
+      j = i - 1;
+
+      while(j >= 0 && array[j] > tmp){
+        array[j+1] = array[j];
+        j--;
+      }
+
+      array[j+1] = tmp;
+    }
+    return array;
+  }
+
   public static void printArray(Integer[] array){
+    for(int i=0; i<array.length; i++){
+      System.out.print("["+array[i]+"] ");
+    }
+    System.out.println();
+  }
+
+  public static void printArray(int[] array){
     for(int i=0; i<array.length; i++){
       System.out.print("["+array[i]+"] ");
     }
