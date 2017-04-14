@@ -5,6 +5,7 @@ public class SortingAlgorithms{
   public static void main(String... args){
     // Default array
     Integer array[] = {4,76,34,97,12,8,123,46};
+    Integer array2[] = {23,54,32,67,89,72};
 
     Scanner sc = new Scanner(System.in);
     String line;
@@ -66,6 +67,20 @@ public class SortingAlgorithms{
           Sorter.printArray(array);
           break;
 
+        case '6':
+          // Sort array 1
+          Sorter.shell(array);
+          System.out.println("Array 1: ");
+          Sorter.printArray(array);
+          // Sort array 2
+          Sorter.shell(array2);
+          System.out.println("Array 2: ");
+          Sorter.printArray(array2);
+          // Result
+          System.out.println("Sorted: ");
+          Sorter.printArray(Sorter.intercalation(array, array2));
+          break;
+
         default:
           System.out.println("Invalid value");
           break;
@@ -92,6 +107,7 @@ public class SortingAlgorithms{
     System.out.println(" 3. Quick sort");
     System.out.println(" 4. Insertion sort");
     System.out.println(" 5. Shell sort");
+    System.out.println(" 6. Intercalation");
     System.out.println();
     System.out.println("=========================================");
   }

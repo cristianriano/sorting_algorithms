@@ -79,6 +79,31 @@ public class Sorter{
     }
   }
 
+  public static Integer[] intercalation(Integer[] array1, Integer[] array2){
+    int l1 = array1.length;
+    int l2 = array2.length;
+    Integer[] array = new Integer[l1+l2];
+    int i,j,k;
+    for(i = j = k =0; i < l1 && j < l2; k++){
+      if(array1[i] < array2[j]){
+        array[k] = array1[i];
+        i++;
+      }
+      else{
+        array[k] = array2[j];
+        j++;
+      }
+    }
+    // Add remaining elements from array 1
+    for(;i < l1 ; i++, k++)
+      array[k] = array1[i];
+
+    for(;j < l2 ; j++, k++)
+      array[k] = array2[j];
+      
+    return array;
+  }
+
   public static void printArray(Integer[] array){
     for(int i=0; i<array.length; i++){
       System.out.print("["+array[i]+"] ");
