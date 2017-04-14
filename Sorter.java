@@ -100,7 +100,29 @@ public class Sorter{
 
     for(;j < l2 ; j++, k++)
       array[k] = array2[j];
+
+    return array;
+  }
+
+  public static Integer[] directMerge(Integer[] array){
+    if(array.length > 1){
+      int leftElements = array.length/2;
+      int rightElements = array.length - leftElements;
+      Integer[] leftArray = new Integer[leftElements];
+      Integer[] rightArray = new Integer[rightElements];
+      int i,j;
+      for(i = 0; i< leftElements; i++)
+        leftArray[i] = array[i];
+      for(; i < leftElements + rightElements; i++)
+        rightArray[i - leftElements] = array[i];
+
+      // Recursiveness
+      leftArray = directMerge(leftArray);
+      rightArray = directMerge(rightArray);
       
+      // Join
+      array = intercalation(leftArray, rightArray);
+    }
     return array;
   }
 

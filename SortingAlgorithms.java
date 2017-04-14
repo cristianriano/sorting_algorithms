@@ -81,6 +81,11 @@ public class SortingAlgorithms{
           Sorter.printArray(Sorter.intercalation(array, array2));
           break;
 
+        case '7':
+          System.out.println("Sorted: ");
+          Sorter.printArray(Sorter.directMerge(array));
+          break;
+
         default:
           System.out.println("Invalid value");
           break;
@@ -108,6 +113,7 @@ public class SortingAlgorithms{
     System.out.println(" 4. Insertion sort");
     System.out.println(" 5. Shell sort");
     System.out.println(" 6. Intercalation");
+    System.out.println(" 7. Direct Merge");
     System.out.println();
     System.out.println("=========================================");
   }
