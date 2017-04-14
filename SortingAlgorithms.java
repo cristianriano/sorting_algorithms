@@ -60,6 +60,12 @@ public class SortingAlgorithms{
           }
           break;
 
+        case '5':
+          Sorter.shell(array);
+          System.out.println("Sorted: ");
+          Sorter.printArray(array);
+          break;
+
         default:
           System.out.println("Invalid value");
           break;
@@ -85,6 +91,7 @@ public class SortingAlgorithms{
     System.out.println(" 2. Bubble sort");
     System.out.println(" 3. Quick sort");
     System.out.println(" 4. Insertion sort");
+    System.out.println(" 5. Shell sort");
     System.out.println();
     System.out.println("=========================================");
   }

@@ -60,6 +60,25 @@ public class Sorter{
     return array;
   }
 
+  public static void shell(Integer[] array){
+    int j,k,tmp,jump;
+    jump = array.length/2;
+    while(jump > 0){
+      do{
+        k = 0;
+        for(int i=0; i+jump<array.length; i++){
+          if(array[i] > array[i+jump]){
+            tmp = array[i];
+            array[i] = array[i+jump];
+            array[i+jump] = tmp;
+            k++;
+          }
+        }
+      } while(k > 0);
+      jump = jump/2;
+    }
+  }
+
   public static void printArray(Integer[] array){
     for(int i=0; i<array.length; i++){
       System.out.print("["+array[i]+"] ");
