@@ -86,6 +86,13 @@ public class SortingAlgorithms{
           Sorter.printArray(Sorter.directMerge(array));
           break;
 
+        case '8':
+          System.out.println("Input array max value: ");
+          n = sc.nextInt();
+          System.out.println("Sorted: ");
+          Sorter.printArray(Sorter.bucket(array, n));
+          break;
+
         default:
           System.out.println("Invalid value");
           break;
@@ -114,6 +121,7 @@ public class SortingAlgorithms{
     System.out.println(" 5. Shell sort");
     System.out.println(" 6. Intercalation");
     System.out.println(" 7. Direct Merge");
+    System.out.println(" 8. Bucket sort");
     System.out.println();
     System.out.println("=========================================");
   }

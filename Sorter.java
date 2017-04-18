@@ -119,9 +119,29 @@ public class Sorter{
       // Recursiveness
       leftArray = directMerge(leftArray);
       rightArray = directMerge(rightArray);
-      
+
       // Join
       array = intercalation(leftArray, rightArray);
+    }
+    return array;
+  }
+
+  // This works if the range of number is small
+  public static Integer[] bucket(Integer[] array, int max){
+    Integer[] bucket = new Integer[max+1];
+
+    for(int i=0; i<bucket.length; i++) { bucket[i] = 0; }
+
+    for(int i=0; i<array.length; i++){
+      bucket[array[i]]++;
+    }
+
+    int index = 0;
+    for(int i=0; i<bucket.length; i++){
+      for(int j=0; j<bucket[i]; j++){
+        array[index] = i;
+        index++;
+      }
     }
     return array;
   }
